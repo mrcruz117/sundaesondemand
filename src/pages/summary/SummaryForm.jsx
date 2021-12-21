@@ -15,9 +15,23 @@ export default function SummaryForm({ setOrderPhase }) {
         setOrderPhase('completed');
     }
 
+    const popover = (
+        <Popover
+            id="termsandconditions-popover"
+            placement="right"
+            positionLeft={200}
+            positionTop={50}
+        >
+            And here's some <strong>amazing</strong> content. It's very engaging. right?
+        </Popover>
+    );
+
     const checkboxLabel = (
         <span>
-            I agree to <span style={{ color: 'blue' }}> Terms and Conditions</span>
+            I agree to
+            <OverlayTrigger placement="right" overlay={popover}>
+                <span style={{ color: 'blue' }}> Terms and Conditions</span>
+            </OverlayTrigger>
         </span>
     );
 
